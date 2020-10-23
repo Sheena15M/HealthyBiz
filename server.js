@@ -14,3 +14,14 @@ app.use(express.json());
 app.use(express.static("public"));
 
 //Connect to mongoose, otherwise it won't work, mongoose and MongoDB go hand in hand
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/HealthyBiz", {
+    useNewUrlParser: true,
+    useFindAndModify: false
+});
+
+//Route to the API and make sure your port knows to listen out
+app.use(require("./routes/api.js"));
+
+app.listen(PORT, () => {
+    console.log('App running on port ${PORT}!');
+});
