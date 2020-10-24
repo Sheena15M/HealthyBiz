@@ -11,5 +11,13 @@ module.exports = function(app){
         })
     });
     
-    app.
+    app.post('/api/workouts/range', function(req,res){
+        Workout.find()
+        .then(data =>{
+            res.json(data)
+        })
+        .catch(err => {
+            res.json(err)
+        })
+    });
 }
