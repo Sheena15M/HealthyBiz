@@ -13,4 +13,12 @@ const WorkoutSchema = new Schema({
             ref: 'Exercise'
         }
     ],
-})
+    totalDuration: {
+        type: Number,
+        default: 0
+    }
+});
+
+const Workout = mongoose.model('Workout', WorkSchema);
+
+module.exports = Workout;
