@@ -11,12 +11,22 @@ module.exports = function(app){
         })
     });
     
-    app.post('/api/workouts/range', function(req,res){
+    app.post('/api/workouts', function(req,res){
         Workout.find()
         .then(data =>{
             res.json(data)
         })
         .catch(err => {
+            res.json(err)
+        })
+    });
+
+    app.get('/api/workouts/range', function(req,res){
+        Workout.find()
+        .then(data =>{
+            res.json(data)
+        })
+        .catch(err =>{
             res.json(err)
         })
     });
