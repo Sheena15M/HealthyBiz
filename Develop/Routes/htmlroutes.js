@@ -7,9 +7,11 @@ router.get("/exercise", (req, res)=> {
     res.sendFile(path.join(__dirname, "../public/exercise.html"))
 });
 
-applicationCache.get('/', function(req,res){
+app.get('/', function(req,res){
     res.sendFile(path.join(__dirname,'../public/index.html'));
 });
 
+app.get('/stats',function(req,res){
+    res.sendFile(path.join(__dirname,'../public/stats.html'));
+});
 
-module.exports = router; 
