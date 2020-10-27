@@ -1,4 +1,4 @@
-const Workout = require('../models /workout')
+const Workout = require('../models/workout')
 
 //If the user wanted to find their past workouts, thhis is how it's searched for
 module.exports = function(app){
