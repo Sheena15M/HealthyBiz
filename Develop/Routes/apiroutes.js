@@ -1,13 +1,16 @@
-const Workout = require('../models/workout')
+const Workout = require('../Models/workout')
 
 //If the user wanted to find their past workouts, thhis is how it's searched for
 module.exports = function(app){
     app.get('/api/workouts',function(req,res){
+        console.log("hit")
         Workout.find()
         .then(data =>{
+            console.log(data)
             res.json(data)
         })
         .catch(err=>{
+            console.log("err")
             res.json(err)
         })
     });
@@ -50,5 +53,5 @@ module.exports = function(app){
         .catch(err => {
             res.json(err)
         })
-    });
+    })
 }

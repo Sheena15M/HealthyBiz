@@ -18,7 +18,7 @@ app.use(express.static("public"));
 
 
 //Connect to mongoose, otherwise it won't work, mongoose and MongoDB go hand in hand
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/HealthyBiz", {
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {
     useNewUrlParser: true,
     useFindAndModify: false
 });
@@ -26,7 +26,11 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/HealthyBiz", {
 //Route to the API and make sure your port knows to listen out
 // app.use(require(".api.js"));
 
-app.use(require("./Routes/htmlroutes.js"))
+const apiRoutes = require("./Routes/apiRoutes.js")
+apiRoutes(app)
+app.use(require("./Routes/htmlRoutes.js"))
+
+
 
 app.listen(PORT, () => {
     console.log('App running on port ${PORT}!');
