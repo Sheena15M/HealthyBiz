@@ -29,9 +29,9 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {
 //Route to the API and make sure your port knows to listen out
 // app.use(require(".api.js"));
 
-const apiRoutes = require("./route/apiRoutes")
+const apiRoutes = require("./route/apiRoutes.js")
 apiRoutes(app);
-app.use(require("./route/htmlRoutes"))
+app.use(require("./route/htmlRoutes.js"))
 
 
 
