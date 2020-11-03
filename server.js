@@ -20,7 +20,10 @@ app.use(express.static("public"));
 //Connect to mongoose, otherwise it won't work, mongoose and MongoDB go hand in hand
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {
     useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
     useFindAndModify: false
+  
 });
 
 //Route to the API and make sure your port knows to listen out
