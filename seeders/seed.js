@@ -2,7 +2,7 @@
 //look at mongoose to see how to make a schema
 
 let mongoose = require("mongoose");
-let db = require("../models");
+let db = require("../Models");
 
 mongoose.connect("mongodb://localhost/workout", {
   useNewUrlParser: true,
